@@ -8,11 +8,12 @@ jobs:
     name: Tenant isolation tests on PostgreSQL ${{ matrix.pg }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        pg: ["15", "17"]
+        pg: [15, 17]
     services:
       postgres:
-        image: postgres:${{ matrix.pg }}
+        image: postgres:${{ matrix.pg }}-alpine
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
         ports:
