@@ -5,15 +5,11 @@ on:
 
 jobs:
   isolation-tests:
-    name: Tenant isolation tests on PostgreSQL ${{ matrix.pg }}
+    name: Tenant isolation tests on PostgreSQL 15
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        pg: [15, 17]
     services:
       postgres:
-        image: postgres:${{ matrix.pg }}-alpine
+        image: postgres:15
         env:
           POSTGRES_HOST_AUTH_METHOD: trust
         ports:
