@@ -36,7 +36,7 @@ File: [`supabase/migrations/20261110000000_tenancy.sql`](supabase/migrations/202
 | `anon` reads tables, calls helpers or `create_tenant` | Permission denied |
 | Table owner role without a matching policy | 0 rows (forced RLS) |
 
-CI runs the tests on PostgreSQL 15 and 17, then runs [supabase-rls-check](https://github.com/Tthanh2k6/supabase-rls-check) on the migrated schema and fails on any finding, Low included.
+CI runs the tests on PostgreSQL 15 (the Supabase default), then runs [supabase-rls-check](https://github.com/Tthanh2k6/supabase-rls-check) on the migrated schema and fails on any finding, Low included.
 
 ## Run it
 
