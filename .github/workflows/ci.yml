@@ -53,7 +53,7 @@ jobs:
           psql -h 127.0.0.1 -U postgres -d app -v ON_ERROR_STOP=1 -f tests/supabase_stub.sql
           for f in supabase/migrations/*.sql; do psql -h 127.0.0.1 -U postgres -d app -v ON_ERROR_STOP=1 -f "$f"; done
       - name: Lint RLS (fail on Low and above)
-        uses: Tthanh2k6/supabase-rls-check@v0.5.0
+        uses: Tthanh2k6/supabase-rls-check@v0.6.3
         with:
           database-url: postgresql://postgres@127.0.0.1:5432/app
           i-own-this-project: "true"
